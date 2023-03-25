@@ -1,0 +1,14 @@
+.carousel-container{
+
+  min-width: 335px;
+  max-width: 400px;
+  background-color: rgba(253, 253, 253, 0);
+
+}
+.carousel__image{
+  min-width: 200px;
+  min-height: 100px;
+  max-width: 300;
+  max-height: 200px;
+  border-radius:5% ;
+}

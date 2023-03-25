@@ -1,0 +1,30 @@
+.backdrop {
+  background-color: rgba(61, 61, 61, 0.48);
+  width: 100vw;
+  height: 100vh;
+
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid red;
+}
+
+.container-options {
+  display: flex;
+  width: 100%;
+  color: white;
+}
+
+.option-in {
+  background-color: #3a9ff1;
+}
+
+.option-out {
+  background-color: #ff576b;
+}
+
+.option-off {
+  background-color: #b9b9b9;
+}
