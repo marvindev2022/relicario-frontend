@@ -1,0 +1,19 @@
+.container-dialog-card {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding:80px 20px;
+  gap: 20px;
+}
+
+.close-dialog-icon {
+  position: fixed;
+  top:0;
+  display: flex;
+  justify-content: flex-end !important;
+  margin: 20px 20px 30px 20px;
+  width: 100%;
+  border: 2px solid red
+}
