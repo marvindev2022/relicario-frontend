@@ -76,8 +76,8 @@ function ProductCard({ product }) {
         />
         <h2>{product.nome}</h2>
         <div className="container-price">
-          <p className="price">R$ {formatToMoney(product.preco)}</p>
-          <p className="free">R$ {formatToMoney(product.preco * 0.85)}</p>
+          <p className="price">{formatToMoney(product.preco)}</p>
+          <p className="free">{formatToMoney(product.preco * 0.85)}</p>
         </div>
       </div>
       {isDialogOpen && (

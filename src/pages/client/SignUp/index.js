@@ -88,7 +88,6 @@ function SignUp() {
 
   return (
     <div className="container-sign-up">
-
       <div className="content-sign-up">
         <form onSubmit={handleSubmit}>
           <h2>Cadastre-se</h2>
@@ -180,7 +179,10 @@ function SignUp() {
             <input
               type="number"
               name="cpf"
-              value={form.cpf}
+              value={form.cpf.replace(
+                /^(\d{3})(\d{3})(\d{3})(\d{2})$/,
+                "$1.$2.$3-$4"
+              )}
               onChange={handleChangeForm}
             />
           </div>
@@ -198,7 +200,10 @@ function SignUp() {
             <input
               type="tel"
               name="phone"
-              value={form.phone}
+              value={form.phonereplace(
+                /^(\d{2})(\d{1})(\d{4})(\d{4})$/,
+                "($1) $2 $3-$4"
+              )}
               onChange={handleChangeForm}
             />
           </div>
