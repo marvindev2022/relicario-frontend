@@ -1,19 +1,21 @@
-.container-carrossel {
+.container-carrossel-distac {
   display: flex;
   justify-content: center;
+  min-width: 100%;
+  max-width: 700px;
   margin-top: -50px;
+  padding: 0 20px;
 }
 .product-carousel {
   display: flex;
   align-items: center;
-  max-width: 440px;
+  width: 100%;
+  max-width: 700px;
 }
-
 .product-carousel button {
   width: 30px;
   height: 30px;
 }
-
 .product-carousel-cards {
   display: flex;
   width: 100%;
@@ -22,7 +24,6 @@
 .hidden {
   display: none;
 }
-
 .view-all {
   width: 100px;
   cursor: pointer;
@@ -38,7 +39,6 @@
 .view-all:hover {
   text-transform: uppercase;
 }
-
 .description-section {
   max-width: 100px;
 
@@ -47,33 +47,33 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 19px;
-  
 
   color: #283148;
 }
-.container-cards {
+.container-section-cards {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   min-width: 400px;
-  max-width: 480px;
+  width: auto;
+  max-width: 100%;
   padding: 50px 5px 50px 5px;
   background-color: #ffffff;
-
 }
+
 .container-card {
   overflow-x: auto;
+  width: auto;
+  max-width: 1440px;
 }
 .container-card::-webkit-scrollbar {
-  width: 10px; 
+  width: 10px;
 }
-
 .container-card::-webkit-scrollbar-track {
   background-color: transparent;
 }
-
 .container-card::-webkit-scrollbar-thumb {
-  background-color: rgba(0,0,0,0); 
+  background-color: rgba(0, 0, 0, 0);
   border-radius: 10px;
 }
 
@@ -81,33 +81,36 @@
   display: flex;
   justify-content: space-around;
   flex-direction: column;
+  min-width: 200px;
+  width: 200px;
   max-width: 200px;
-  max-height: 350px;
+  height: auto;
+  max-height: 450px;
   margin: 5px;
   padding: 20px;
-  background-color: aliceblue;
+  background-color: rgb(247, 248, 250);
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   text-align: center;
 }
-
+.card:hover {
+  border: 2px solid #ff5959;
+}
 .card .imageProduct {
-  width: 105px;
-  height: 105px;
+  width: 125px;
+  height: 125px;
   object-fit: cover;
 }
-
 .card h2 {
-  width: 105px;
-  height: 40px;
+  width: 125px;
+  height: auto;
   font-size: 14px;
   font-weight: 500;
   margin-bottom: 10px;
 }
-
 .card .free {
   all: unset;
-  width: 60px;
+  width: 80px;
   height: 15px;
   font-family: "Roboto";
   font-style: normal;
@@ -117,7 +120,6 @@
   color: #ff5959;
   background-color: #ffffff;
 }
-
 .card .price {
   width: 50px;
   height: 15px;
@@ -132,17 +134,17 @@
 
   opacity: 0.6;
 }
+
 .container-price {
   display: flex;
   gap: 10px;
 }
-
-.container-cards span {
+.container-section-cards span {
   display: flex;
   align-items: center;
   justify-content: space-around;
   width: 100%;
-  height: 50px;
+  height: auto;
   text-align: center;
   font-size: xx-large;
   font-style: oblique;

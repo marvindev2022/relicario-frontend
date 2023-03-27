@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import "./style.css";
-import Header from "../../../components/ADM/HeaderADM";
-import Filter from "../../../components/ADM/Filter";
-import Table from "../../../components/ADM/Table";
-import AddProductsModal from "../../../components/ADM/AddProductsModal";
-import EditProductsModal from "../../../components/ADM/EditProductsModal";
-import Resume from "../../../components/ADM/Resume";
-import ProfileModal from "../../../components/ADM/ProfileModalADM";
+import Header from "../../../components/admin/HeaderADM";
+import Filter from "../../../components/admin/Filter";
+import Table from "../../../components/admin/Table";
+import AddProductsModal from "../../../components/admin/AddProductsModal";
+import EditProductsModal from "../../../components/admin/EditProductsModal";
+import Resume from "../../../components/admin/Resume";
+import ProfileModal from "../../../components/admin/ProfileModalADM";
 import { loadProducts } from "../../../utils/requisitions";
 
 function MainADM() {

@@ -2,7 +2,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 480px;
+  min-width: 480px;
   height: 175px;
   gap: 25px;
   background: #283148;
@@ -31,7 +31,6 @@ header {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: #ff8f56;
 }
 .lupa {
   width: 18;

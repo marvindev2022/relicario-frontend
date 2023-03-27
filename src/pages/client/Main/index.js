@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./styles.css";
+import "../../../styles/dialog.css"
 import Header from "../../../components/Header";
 import EditProfileModal from "../../../components/EditProfileModal";
 import { loadProducts} from "../../../utils/requisitions";

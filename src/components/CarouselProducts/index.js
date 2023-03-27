@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import closeIcon from "../../assets/close-icon.svg"
 import CarouselDistacs from "../CarouselDestaques";
+import {formatToMoney} from "../../utils/formatters"
 import "./styles.css";
 
 function ProductDialog({ product, onClose }) {
@@ -8,33 +10,46 @@ function ProductDialog({ product, onClose }) {
 
   return (
     <dialog
-      style={{ minWidth: "480px", minHeight: "100%", zIndex: 99999999999 }}
+      style={{
+        position: "fixed",
+        top: 0,
+
+        zIndex: 99999999999,
+      }}
       open={true}
       onClose={onClose}
     >
-      <div
-        style={{
-          height: "100vh",
-          display: "flex",
-          justfyContent: "center",
-          alignItems: "center",
-          flexDirection: "column",
-          gap: "40px",
-        }}
-        className="container-dialog-card"
-      >
+      <div className="container-dialog-card">
+        <span className="close-dialog-icon">
+          {" "}
+          <img
+            onClick={() => {
+              document.querySelector("dialog").close();
+            }}
+            src={closeIcon}
+            alt="Fechar"
+          />
+        </span>
         <img
           style={{ objectFit: "cover", width: "400px" }}
           src={product.imagem}
           alt={`Imagem ${product.nome}`}
         />
         <h1>{product.nome}</h1>
-        <h4>{product.categoria_nome}</h4>
-        <h6>{product.subcategoria_nome}</h6>
         <span>{product.descricao}</span>
-        <span>R$ {originalPrice}</span>
-        <span>R$ {discountPrice}</span>
-        <button>Comprar</button>
+        <span>
+          <h4>{product.categoria_nome}</h4>
+          <h6>{product.subcategoria_nome}</h6>
+        </span>
+        <span className="price">De {formatToMoney(originalPrice)}</span>
+        <span className="free">Por {formatToMoney(discountPrice)}</span>
+        <button
+          onClick={() => {
+            document.querySelector("dialog").close();
+          }}
+        >
+          Comprar
+        </button>
       </div>
     </dialog>
   );
@@ -61,8 +76,8 @@ function ProductCard({ product }) {
         />
         <h2>{product.nome}</h2>
         <div className="container-price">
-          <p className="price">R$ {product.preco}</p>
-          <p className="free">R$ {product.preco * 0.85}</p>
+          <p className="price">R$ {formatToMoney(product.preco)}</p>
+          <p className="free">R$ {formatToMoney(product.preco * 0.85)}</p>
         </div>
       </div>
       {isDialogOpen && (
@@ -97,10 +112,10 @@ function ProductsCarousel({ products }) {
 
   return (
     <>
-      <section className="container-carrossel">
+      <section className="container-carrossel-distac">
         <CarouselDistacs />
       </section>
-      <section className="container-cards">
+      <section className="container-section-cards">
         <span className="container-p-top">
           <h3 className="description-section" style={{ width: "450px" }}>
             Beleza
