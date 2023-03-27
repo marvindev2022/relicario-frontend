@@ -37,16 +37,11 @@ function SignIn() {
 
   return (
     <div className="container-sign-in">
-
       <div className="content-sign-in">
         <div className="left">
-          <h1>
-            Controle suas <span>finanças</span> e impulsione seu e-commerce com
-            facilidade.
-          </h1>
           <h3>
-            "Uma mulher com determinação é capaz de tudo. Não deixe ninguém lhe
-            dizer o contrário."
+            "Uma <span>Mulher</span> com determinação é capaz de tudo. Não
+            deixe ninguém lhe dizer o contrário."
           </h3>
           <button
             className="btn-purple btn-big"

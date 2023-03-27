@@ -8,11 +8,10 @@ header {
   background: #283148;
   padding: 30px 10px;
 }
-.container-header{
+
+.container-header {
   display: flex;
   gap: 25px;
-
-
 }
 .input-search {
   display: flex;
@@ -25,19 +24,38 @@ header {
 }
 
 .container-car {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 36px;
   height: 36px;
   border-radius: 50%;
+  background-color: coral;
+}
+.container-car-b {
+  position: absolute;
+  top: 5px;
+  right: 2px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  z-index: 5;
+  background: #283148;
+}
+
+.container-car-b b {
+  font-size: 12px;
+  color : white
 }
 .lupa {
   width: 18;
   height: 18;
   position: absolute;
-  left: 80px; 
-  top:42px;
+  left: 80px;
+  top: 42px;
 }
-
-

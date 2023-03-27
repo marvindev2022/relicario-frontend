@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import closeIcon from "../../assets/close-icon.svg"
+import closeIcon from "../../assets/close-icon.svg";
 import CarouselDistacs from "../CarouselDestaques";
-import {formatToMoney} from "../../utils/formatters"
+import { formatToMoney } from "../../utils/formatters";
 import "./styles.css";
 
-function ProductDialog({ product, onClose }) {
+function ProductDialog({ product, onClose, stateCar, setStateCar }) {
   const originalPrice = Number(product.preco);
   const discountPrice = originalPrice * 0.85;
 
@@ -45,6 +45,7 @@ function ProductDialog({ product, onClose }) {
         <span className="free">Por {formatToMoney(discountPrice)}</span>
         <button
           onClick={() => {
+            setStateCar({ ...stateCar, [product.nome]: product });
             document.querySelector("dialog").close();
           }}
         >
@@ -55,7 +56,7 @@ function ProductDialog({ product, onClose }) {
   );
 }
 
-function ProductCard({ product }) {
+function ProductCard({ product, stateCar, setStateCar }) {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const handleOpenDialog = () => {
@@ -81,25 +82,36 @@ function ProductCard({ product }) {
         </div>
       </div>
       {isDialogOpen && (
-        <ProductDialog product={product} onClose={handleCloseDialog} />
+        <ProductDialog
+          product={product}
+          onClose={handleCloseDialog}
+          stateCar={stateCar}
+          setStateCar={setStateCar}
+        />
       )}
     </>
   );
 }
 
-function ProductCarousel({ products }) {
+function ProductCarousel({ products, stateCar, setStateCar }) {
   return (
     <div className="product-carousel">
       <div className="product-carousel-cards">
         {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
+          <ProductCard
+            key={product.id}
+            product={product}
+            stateCar={stateCar}
+            setStateCar={setStateCar}
+          />
         ))}
       </div>
     </div>
   );
 }
 
-function ProductsCarousel({ products }) {
+function ProductsCarousel({ products, stateCar, setStateCar }) {
+  console.log(stateCar);
   const beautyProducts = products.filter(
     (product) => product.categoria_nome === "Beleza"
   );
@@ -123,7 +135,11 @@ function ProductsCarousel({ products }) {
           <p className="view-all">Ver tudo</p>
         </span>
         <div className="container-card">
-          <ProductCarousel products={beautyProducts} />
+          <ProductCarousel
+            products={beautyProducts}
+            stateCar={stateCar}
+            setStateCar={setStateCar}
+          />
         </div>
         <span className="container-p-top">
           <h3 className="description-section" style={{ width: "450px" }}>
@@ -132,7 +148,11 @@ function ProductsCarousel({ products }) {
           <p className="view-all">Ver tudo</p>
         </span>
         <div className="container-card">
-          <ProductCarousel products={accessoriesProducts} />
+          <ProductCarousel
+            products={accessoriesProducts}
+            stateCar={stateCar}
+            setStateCar={setStateCar}
+          />
         </div>
         <span className="container-p-top">
           <h3 className="description-section" style={{ width: "450px" }}>
@@ -141,7 +161,11 @@ function ProductsCarousel({ products }) {
           <p className="view-all">Ver tudo</p>
         </span>
         <div className="container-card">
-          <ProductCarousel products={clothingProducts} />
+          <ProductCarousel
+            products={clothingProducts}
+            stateCar={stateCar}
+            setStateCar={setStateCar}
+          />
         </div>
       </section>
     </>
