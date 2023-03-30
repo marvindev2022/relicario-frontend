@@ -1,15 +1,10 @@
 import "./styles.css";
 import carrinho from "../../assets/car-icons.png";
 import lupa from "../../assets/lupa.png";
-import useCartProvider from "../../hooks/useCartProvider";
-
-
-
-
+import { useCartList } from "../../hooks/useCartList";
 
 function Header() {
-  const { cartItems } = useCartProvider()
-
+  const { cartItems } = useCartList()
   return (
     <header>
       <div className="container-header">
@@ -19,10 +14,12 @@ function Header() {
         </span>
 
         <span className="container-car">
-          <img className="car-icon" src={carrinho} alt="carrinho" />
+          <img onClick={()=>{
+           document.querySelector(".container-cart").showModal() 
+          }} className="car-icon" src={carrinho} alt="carrinho" />
           {cartItems?.length > 0 ? (
             <span className="container-car-b">
-              <b>{cartItems.length}</b>
+              <b>{cartItems?.length}</b>
             </span>
           ) : (
             <></>

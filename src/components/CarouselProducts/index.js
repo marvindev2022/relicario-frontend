@@ -4,10 +4,12 @@ import useProdutsList from "../../hooks/useProductsList";
 import CarouselDistacs from "../CarouselDestaques";
 import { formatToMoney } from "../../utils/formatters";
 import "./styles.css";
+import { useCartList } from "../../hooks/useCartList";
 
 function ProductDialog({ product, onClose }) {
   const originalPrice = Number(product.preco);
   const discountPrice = originalPrice * 0.85;
+  const { addItemToCart } = useCartList();
 
   return (
     <dialog
@@ -46,6 +48,8 @@ function ProductDialog({ product, onClose }) {
         <span className="free">Por {formatToMoney(discountPrice)}</span>
         <button
           onClick={() => {
+            addItemToCart(product);
+
             document.querySelector("dialog").close();
           }}
         >
