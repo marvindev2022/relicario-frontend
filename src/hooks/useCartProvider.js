@@ -2,12 +2,12 @@ import { useState } from "react";
 import { getItem, setItem } from "../utils/storage";
 
 export default function useCartProvider() {
-  const [cartItems, setCartItems] = useState(
-    JSON.parse(getItem("products")) ?? []
-  );
+  const [cartItems, setCartItems] = useState();
 
   const addItemToCart = (item) => {
-    setCartItems([...cartItems, item]);
+    const arrayTeste = [cartItems]
+    arrayTeste.push(item)
+    setCartItems(arrayTeste);
     const arrayProducts = JSON.stringify(cartItems);
     setItem("products", arrayProducts);
   };

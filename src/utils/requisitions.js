@@ -7,7 +7,7 @@ export async function loadCategories() {
   token = getItem("tokenADM");
 
   try {
-    const {data}= await api.get("/categorias", {
+    const { data } = await api.get("/categorias", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -17,7 +17,7 @@ export async function loadCategories() {
 
     return orderedCategories;
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 }
 
@@ -27,29 +27,27 @@ export async function loadSubcategories() {
   token = getItem("tokenADM");
 
   try {
-    const {data}= await api.get("/categorias", {
+    const { data } = await api.get("/categorias", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
     });
 
-    const orderedSubcategories = data.subcategorias.sort(
-      (a, b) => a - b
-    );
+    const orderedSubcategories = data.subcategorias.sort((a, b) => a - b);
 
     return orderedSubcategories;
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 }
 
 export async function loadProducts() {
   try {
-    const {data}= await api.get("/produtos");
+    const { data } = await api.get("/produtos");
 
     return data;
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 }
 export async function loadDistacs() {
@@ -57,6 +55,19 @@ export async function loadDistacs() {
     const { data } = await api.get("/destaques");
     return data;
   } catch (error) {
-    console.log(error);
+    console.error(error);
+  }
+}
+export async function loadCart() {
+  try {
+    const token = getItem("token");
+    const { data } = await api.get("/carrinho", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return data;
+  } catch (error) {
+    console.error(error);
   }
 }

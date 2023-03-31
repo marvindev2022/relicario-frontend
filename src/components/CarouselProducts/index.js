@@ -27,7 +27,7 @@ function ProductDialog({ product, onClose }) {
           {" "}
           <img
             onClick={() => {
-              document.querySelector("dialog").close();
+              onClose();
             }}
             src={closeIcon}
             alt="Fechar"
@@ -49,8 +49,7 @@ function ProductDialog({ product, onClose }) {
         <button
           onClick={() => {
             addItemToCart(product);
-
-            document.querySelector("dialog").close();
+            onClose();
           }}
         >
           Comprar
