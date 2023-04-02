@@ -110,7 +110,6 @@ function SignUp() {
 
   function handleChangeForm({ target }) {
     setForm({ ...form, [target.name]: target.value });
-    console.log(target);
   }
 
   return (

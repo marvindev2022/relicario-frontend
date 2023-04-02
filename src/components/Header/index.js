@@ -4,7 +4,7 @@ import lupa from "../../assets/lupa.png";
 import { useCartList } from "../../hooks/useCartList";
 
 function Header() {
-  const { cartItems } = useCartList()
+  const { cartItems } = useCartList();
   return (
     <header>
       <div className="container-header">
@@ -13,13 +13,20 @@ function Header() {
           <input className="input-search" placeholder="Malbec" type="search" />
         </span>
 
-        <span className="container-car">
-          <img onClick={()=>{
-           document.querySelector(".container-cart").showModal() 
-          }} className="car-icon" src={carrinho} alt="carrinho" />
+        <span
+          onClick={() => {
+            document.querySelector(".container-cart").showModal();
+          }}
+          className="container-car"
+        >
+          <img className="car-icon" src={carrinho} alt="carrinho" />
           {cartItems?.length > 0 ? (
             <span className="container-car-b">
-              <b>{cartItems?.length}</b>
+              <b>
+                {cartItems?.reduce((count, product) => {
+                  return count + product.quantidade;
+                }, 0)}
+              </b>
             </span>
           ) : (
             <></>

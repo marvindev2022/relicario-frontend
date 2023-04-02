@@ -97,8 +97,7 @@ function ProductCard({ product }) {
   );
 }
 
-function ProductCarousel() {
-  const { products } = useProdutsList();
+function ProductCarousel({ products }) {
   return (
     <div className="product-carousel">
       <div className="product-carousel-cards">
@@ -112,15 +111,17 @@ function ProductCarousel() {
 
 function ProductsCarousel() {
   const { products } = useProdutsList();
-  const beautyProducts = products.filter(
-    (product) => product.categoria_nome === "Beleza"
-  );
-  const accessoriesProducts = products.filter(
-    (product) => product.categoria_nome === "Acessórios"
-  );
-  const clothingProducts = products.filter(
-    (product) => product.categoria_nome === "Vestuário"
-  );
+  const beautyProducts = [];
+  const accessoriesProducts = [];
+  const clothingProducts = [];
+  const shoesProducts = [];
+  products?.filter((product) => {
+    if (product.categoria_nome === "Beleza") beautyProducts.push(product);
+    if (product.categoria_nome === "Acessórios")accessoriesProducts.push(product);
+    if (product.categoria_nome === "Vestuário") clothingProducts.push(product);
+    if (product.categoria_nome === "Calçados") shoesProducts.push(product);
+    return 0
+    });
 
   return (
     <>
@@ -154,6 +155,15 @@ function ProductsCarousel() {
         </span>
         <div className="container-card">
           <ProductCarousel products={clothingProducts} />
+        </div>
+        <span className="container-p-top">
+          <h3 className="description-section" style={{ width: "450px" }}>
+            Calçados
+          </h3>
+          <p className="view-all">Ver tudo</p>
+        </span>
+        <div className="container-card">
+          <ProductCarousel products={shoesProducts} />
         </div>
       </section>
     </>

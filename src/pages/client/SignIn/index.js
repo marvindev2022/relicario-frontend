@@ -40,8 +40,8 @@ function SignIn() {
       <div className="content-sign-in">
         <div className="left">
           <h3>
-            "Uma <span>Mulher</span> com determinação é capaz de tudo. Não
-            deixe ninguém lhe dizer o contrário."
+            "Uma <span>Mulher</span> com determinação é capaz de tudo. Não deixe
+            ninguém lhe dizer o contrário."
           </h3>
           <button
             className="btn-purple btn-big"

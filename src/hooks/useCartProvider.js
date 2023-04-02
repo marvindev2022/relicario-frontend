@@ -1,34 +1,57 @@
-import { useState } from "react";
-import { getItem, setItem } from "../utils/storage";
+import { useEffect, useState, useCallback } from "react";
+import api from "../services/api";
+import { loadCart } from "../utils/requisitions";
+import { getItem } from "../utils/storage";
 
 export default function useCartProvider() {
-  const [cartItems, setCartItems] = useState();
+  const [cartItems, setCartItems] = useState([]);
+  const [render, setRender] = useState(false);
+  const fetchProducts = useCallback(async () => {
+    const allProducts = await loadCart();
+    const array = allProducts.sort((a, b) => a.id - b.id);
+    setCartItems(array ?? allProducts);
+  }, []);
 
-  const addItemToCart = (item) => {
-    const arrayTeste = [cartItems]
-    arrayTeste.push(item)
-    setCartItems(arrayTeste);
-    const arrayProducts = JSON.stringify(cartItems);
-    setItem("products", arrayProducts);
+  useEffect(() => {
+    fetchProducts();
+    setRender(false);
+  }, [render, fetchProducts]);
+
+  const addItemToCart = async (item) => {
+    const token = getItem("token");
+    const newProduct = {
+      nome: item.nome,
+      imagem: item.imagem,
+      produtoId: item.produto_id ?? item.id,
+      quantidade: 1,
+      valorTotal: item.preco ?? item.valor_total,
+      tipoEnvio: "correios",
+      custoEnvio: 1,
+    };
+
+    await api.post("/carrinho", newProduct, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    fetchProducts();
+    setRender(true);
   };
 
   const removeItemFromCart = (item) => {
-    const newCartItems = cartItems.filter(
-      (cartItem) => cartItem.id !== item.id
+    const newCartItems = cartItems?.filter(
+      (cartItem) => cartItem.produto_id !== item.id
     );
     setCartItems(newCartItems);
-    const arrayProducts = JSON.stringify(cartItems);
-    setItem("products", arrayProducts);
   };
 
   const clearCart = () => {
     setCartItems([]);
-    const arrayProducts = JSON.stringify(cartItems);
-    setItem("products", arrayProducts);
   };
 
   return {
-    cartItems,  
+    cartItems,
     setCartItems,
     addItemToCart,
     removeItemFromCart,

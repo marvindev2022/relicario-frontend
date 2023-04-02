@@ -78,7 +78,6 @@ function ProfileModal({ open, handleClose }) {
             Authorization: `Bearer ${token}`,
           },
         });
-console.log(response)
 
         const { nome, senha } = response.data;
 

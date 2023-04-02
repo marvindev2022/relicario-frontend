@@ -22,9 +22,7 @@ export async function loadCategories() {
 }
 
 export async function loadSubcategories() {
-  let token = "";
-
-  token = getItem("tokenADM");
+  const token = getItem("tokenADM") ?? "";
 
   try {
     const { data } = await api.get("/categorias", {
@@ -50,6 +48,7 @@ export async function loadProducts() {
     console.error(error);
   }
 }
+
 export async function loadDistacs() {
   try {
     const { data } = await api.get("/destaques");

@@ -102,7 +102,6 @@ function EditProductsModal({
 
       setProducts([...allProductss]);
     } catch (error) {
-      console.log(error);
       notifyError(error.response.data);
     }
   }

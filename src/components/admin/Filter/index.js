@@ -41,7 +41,6 @@ function Filter({ _, setProducts }) {
       .map((subcategory) => subcategory.id);
     if (subcategoriesCheckedId.length) {
       localTransactions = localTransactions.filter((transaction) => {
-        console.log(transaction);
         return subcategoriesCheckedId.includes(transaction.subcategoria_id);
       });
       setProducts([...localTransactions]);
