@@ -20,15 +20,15 @@
     "react-toastify": "^9.0.8",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://marvindev2022.github.io/relicario-frontend/docs/index.html",
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
-  },
+  "homepage": "https://marvindev2022.github.io/relicario-frontend/",
+ "scripts": {
+  "start": "react-scripts start",
+  "build": "react-scripts build",
+  "test": "react-scripts test",
+  "eject": "react-scripts eject",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build"
+},
   "eslintConfig": {
     "extends": [
       "react-app",
