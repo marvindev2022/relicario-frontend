@@ -8,8 +8,7 @@ export default function useCartProvider() {
   const [render, setRender] = useState(false);
   const fetchProducts = useCallback(async () => {
     const allProducts = await loadCart();
-    const array = allProducts.sort((a, b) => a.id - b.id);
-    setCartItems(array ?? allProducts);
+    setCartItems(allProducts.sort((a, b) => a.id - b.id));
   }, []);
 
   useEffect(() => {

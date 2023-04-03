@@ -1,63 +1,9 @@
 import React, { useState } from "react";
-import closeIcon from "../../assets/close-icon.svg";
 import useProdutsList from "../../hooks/useProductsList";
 import CarouselDistacs from "../CarouselDestaques";
 import { formatToMoney } from "../../utils/formatters";
 import "./styles.css";
-import { useCartList } from "../../hooks/useCartList";
-
-function ProductDialog({ product, onClose }) {
-  const originalPrice = Number(product.preco);
-  const discountPrice = originalPrice * 0.85;
-  const { addItemToCart } = useCartList();
-
-  return (
-    <dialog
-      style={{
-        position: "fixed",
-        top: 0,
-
-        zIndex: 99999999999,
-      }}
-      open={true}
-      onClose={onClose}
-    >
-      <div className="container-dialog-card">
-        <span className="close-dialog-icon">
-          {" "}
-          <img
-            onClick={() => {
-              onClose();
-            }}
-            src={closeIcon}
-            alt="Fechar"
-          />
-        </span>
-        <img
-          style={{ objectFit: "cover", width: "400px" }}
-          src={product.imagem}
-          alt={`Imagem ${product.nome}`}
-        />
-        <h1>{product.nome}</h1>
-        <span>{product.descricao}</span>
-        <span>
-          <h4>{product.categoria_nome}</h4>
-          <h6>{product.subcategoria_nome}</h6>
-        </span>
-        <span className="price">De {formatToMoney(originalPrice)}</span>
-        <span className="free">Por {formatToMoney(discountPrice)}</span>
-        <button
-          onClick={() => {
-            addItemToCart(product);
-            onClose();
-          }}
-        >
-          Comprar
-        </button>
-      </div>
-    </dialog>
-  );
-}
+import ProductDialog from "../Dialog/dialog";
 
 function ProductCard({ product }) {
   const { stateItensCar, setStateItensCar } = useProdutsList();

@@ -1,0 +1,46 @@
+.container-dialog-card {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+
+  background-color: rgb(90, 140, 140);
+}
+.imagem-dialog-card {
+  object-fit: cover;
+  width: 375px;
+  height: 360px;
+  border: 2px solid red;
+}
+
+.close-icon {
+  position: fixed;
+  top: 0;
+  right: 0;
+  border: 2px solid red;
+}
+.container-descriptions {
+  border: 2px solid red;
+}
+.container-informs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 174px;
+  bottom: 0px;
+  background: #283148;
+  border-radius: 25px 25px 0px 0px;
+}
+.btn-confirm {
+  width: 325px !important;
+  height: 46px !important;
+
+  color: white;
+  background: #ff5959;
+  border-radius: 8px;
+}

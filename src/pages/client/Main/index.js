@@ -1,5 +1,4 @@
 import "./styles.css";
-import "../../../styles/dialog.css";
 import Header from "../../../components/Header";
 import EditProfileModal from "../../../components/EditProfileModal";
 import ProductsCarousel from "../../../components/CarouselProducts";

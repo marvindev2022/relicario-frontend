@@ -19,6 +19,8 @@
 .product-carousel-cards {
   display: flex;
   width: 100%;
+  height: 250px;
+  padding-left: 10px;
 }
 
 .hidden {
@@ -79,20 +81,20 @@
 
 .card {
   display: flex;
-  justify-content: space-around;
   flex-direction: column;
-  min-width: 200px;
-  width: 200px;
-  max-width: 200px;
+  justify-content: space-around;
+  align-items: center;
+
+  width: 150px;
   height: auto;
-  max-height: 450px;
+
   margin: 5px;
   padding: 20px;
-  background-color: rgb(247, 248, 250);
+
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   text-align: center;
 }
+
 .card:hover {
   border: 2px solid #ff5959;
 }
@@ -137,7 +139,8 @@
 
 .container-price {
   display: flex;
-  gap: 10px;
+  justify-content: center;
+  gap: 5px;
 }
 .container-section-cards span {
   display: flex;
@@ -151,3 +154,5 @@
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans";
 }
+
+
