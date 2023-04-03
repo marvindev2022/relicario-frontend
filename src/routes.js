@@ -7,11 +7,11 @@ import SignIn from "./pages/client/SignIn";
 import SignUp from "./pages/client/SignUp";
 import { getItem } from "./utils/storage";
 
-function ProtectedRoutes({ redirectTo }) {
-  const token = getItem("token");
+// function ProtectedRoutes({ redirectTo }) {
+//   const token = getItem("token");
 
-  return token ? <Outlet /> : <Navigate to={redirectTo} />;
-}
+//   return token ? <Outlet /> : <Navigate to={redirectTo} />;
+// }
 function ProtectedRoutesADM({ redirectTo }) {
   const tokenADM = getItem("tokenADM");
 
@@ -29,9 +29,9 @@ function MainRoutes() {
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/admcontroller" element={<SignInADM />} />
 
-        <Route element={<ProtectedRoutes redirectTo="/" />}>
+        {/* <Route element={<ProtectedRoutes redirectTo="/" />}>
           <Route path="*" element={"404 error"} />
-        </Route>
+        </Route> */}
         <Route element={<ProtectedRoutesADM redirectTo="/admcontroller" />}>
           <Route path="/main/admcontroller" element={<MainADM />} />
         </Route>
