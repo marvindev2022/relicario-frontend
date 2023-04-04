@@ -1,4 +1,3 @@
-import { all } from "axios";
 import { useEffect, useState, useCallback } from "react";
 import api from "./../services/api";
 import { loadCart } from "./../utils/requisitions";
@@ -9,7 +8,7 @@ export default function useCartProvider() {
   const [render, setRender] = useState(false);
   const fetchProducts = useCallback(async () => {
     const allProducts = await loadCart();
-    if(allProducts.length > 0){
+    if(getItem("token")){
     setCartItems(allProducts.sort((a, b) => a.id - b.id));}
   }, []);
 

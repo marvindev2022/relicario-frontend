@@ -15,10 +15,10 @@ export default function Nav() {
   return (
     <menu className="menu-fixed">
       <span>
-        <Link to="/">
+        <Link to="/relicario-frontend/">
           <img
             onClick={() => {
-              navigate("/");
+              navigate("/relicario-frontend/");
             }}
             src={homeItem}
             alt=""
@@ -27,10 +27,10 @@ export default function Nav() {
         Home
       </span>
       <span>
-        <Link to="/">
+        <Link to="/relicario-frontend/">
           <img
             onClick={() => {
-              navigate("/favorict");
+              navigate("/relicario-frontend/favorict");
             }}
             src={favItem}
             alt=""
@@ -39,10 +39,10 @@ export default function Nav() {
         Favoritos
       </span>
       <span>
-        <Link to="/">
+        <Link to="/relicario-frontend/">
           <img
             onClick={() => {
-              navigate("/carrinho");
+              navigate("/relicario-frontend/carrinho");
             }}
             src={alert}
             alt=""
@@ -53,7 +53,7 @@ export default function Nav() {
       <span>
         <img
           onClick={() => {
-            getItem("token") ? console.log("aqui") : navigate("/sign-in");
+            getItem("token") ? console.log("aqui") : navigate("/relicario-frontend/sign-in");
           }}
           src={profileItem}
           alt=""
