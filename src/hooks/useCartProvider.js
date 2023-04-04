@@ -1,9 +1,5 @@
-import {
-  useEffect,
-  useState,
-  useCallback,
-} from "react";
-import api from "../services/api";
+import { useEffect, useState, useCallback } from "react";
+import api from "../pages/client/SignUp/services/api";
 import { loadCart } from "../utils/requisitions";
 import { getItem } from "../utils/storage";
 
