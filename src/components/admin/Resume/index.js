@@ -1,4 +1,7 @@
-import { useEffect, useState } from "react";
+import {
+  useEffect,
+  useState,
+} from "../../../../build/node_modules/@types/react";
 import api from "../../../services/api";
 // import { formatToMoney } from "../../utils/formatters";
 import { notifyError } from "../../../utils/notifications";
@@ -30,7 +33,7 @@ function Resume({ transactions }) {
         setExtract({
           in: "em criação",
           out: "em criação",
-          balance:"em criação",
+          balance: "em criação",
         });
       } catch (error) {
         notifyError(error.response.data);

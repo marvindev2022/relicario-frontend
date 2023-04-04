@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "../../build/node_modules/@types/react";
 import { loadProducts } from "../utils/requisitions";
 
 export default function useProductsProvider() {

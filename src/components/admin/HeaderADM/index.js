@@ -1,14 +1,14 @@
 import "./styles.css";
 import Profile from "../../../assets/profile.svg";
 import Logout from "../../../assets/logout.svg";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "../../../../build/node_modules/react-router-dom/dist";
 import { clear, getItem } from "../../../utils/storage";
 
 function Header({ handleEditProfile }) {
   const navigate = useNavigate();
 
-  let userName = !getItem("admName")
-   
+  let userName = !getItem("admName");
+
   function handleLogout() {
     clear();
     navigate("/admcontroller");
@@ -18,7 +18,7 @@ function Header({ handleEditProfile }) {
     <header className="headerADM">
       <div className="width-limit content-header">
         <div>
-          <h1 className="h1" >Relicario</h1>
+          <h1 className="h1">Relicario</h1>
         </div>
         <div className="container-sign-out">
           <div onClick={handleEditProfile} className="profile-area">

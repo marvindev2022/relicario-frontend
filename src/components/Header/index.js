@@ -3,7 +3,7 @@ import carrinho from "../../assets/car-icons.png";
 import lupa from "../../assets/lupa.png";
 import { useCartList } from "../../hooks/useCartList";
 import { getItem } from "../../utils/storage";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "../../../build/node_modules/react-router-dom/dist";
 function Header() {
   const { cartItems } = useCartList();
   const navigate = useNavigate();

@@ -1,5 +1,8 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useState } from "../../../../build/node_modules/@types/react";
+import {
+  Link,
+  useNavigate,
+} from "../../../../build/node_modules/react-router-dom/dist";
 import api from "../../../services/api";
 import { notifyError, notifySucess } from "../../../utils/notifications";
 import "./styles.css";

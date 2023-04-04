@@ -1,7 +1,10 @@
-import { Link, useNavigate } from "react-router-dom";
+import {
+  Link,
+  useNavigate,
+} from "../../../build/node_modules/react-router-dom/dist";
 import homeItem from "../../assets/home-icon.png";
 import favItem from "../../assets/fav-icon.png";
-import alert from "../../assets/alert.png"
+import alert from "../../assets/alert.png";
 import profileItem from "../../assets/profile-icon.png";
 import "./style.css";
 import { getItem } from "../../utils/storage";
@@ -21,7 +24,7 @@ export default function Nav() {
             alt=""
           />
         </Link>
-          Home
+        Home
       </span>
       <span>
         <Link to="/">
@@ -33,7 +36,7 @@ export default function Nav() {
             alt=""
           />
         </Link>
-          Favoritos
+        Favoritos
       </span>
       <span>
         <Link to="/">
@@ -45,17 +48,17 @@ export default function Nav() {
             alt=""
           />
         </Link>
-          Notificações
+        Notificações
       </span>
       <span>
-          <img
-            onClick={() => {
-              getItem('token') ? console.log("aqui") :navigate("/sign-in");
-            }}
-            src={profileItem}
-            alt=""
-          />
-          conta
+        <img
+          onClick={() => {
+            getItem("token") ? console.log("aqui") : navigate("/sign-in");
+          }}
+          src={profileItem}
+          alt=""
+        />
+        conta
       </span>
     </menu>
   );

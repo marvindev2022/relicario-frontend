@@ -1,5 +1,8 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import {
+  useEffect,
+  useState,
+} from "../../../../build/node_modules/@types/react";
+import { useNavigate } from "../../../../build/node_modules/react-router-dom/dist";
 import api from "../../../services/api";
 import { notifyError } from "../../../utils/notifications";
 import { getItem, setItem } from "../../../utils/storage";
@@ -21,7 +24,10 @@ function SignInADM() {
       return notifyError("Todos os campos são obrigatórios.");
 
     try {
-      const response = await api.post("/login/admcontroller", { nome:name, senha: password });
+      const response = await api.post("/login/admcontroller", {
+        nome: name,
+        senha: password,
+      });
       const { usuarioLogado, token } = response.data;
 
       setItem("tokenADM", token);
@@ -38,7 +44,17 @@ function SignInADM() {
   return (
     <div className="container-sign-in">
       <div>
-        <h1 style={{color:"black",position:"absolute",top:"50px",left:"45%"}}className="h1">Relicario</h1>
+        <h1
+          style={{
+            color: "black",
+            position: "absolute",
+            top: "50px",
+            left: "45%",
+          }}
+          className="h1"
+        >
+          Relicario
+        </h1>
       </div>
       <div className="content-sign-in">
         <div className="left">

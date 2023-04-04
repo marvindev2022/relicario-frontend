@@ -1,4 +1,8 @@
-import { useEffect, useState, useCallback } from "react";
+import {
+  useEffect,
+  useState,
+  useCallback,
+} from "../../build/node_modules/@types/react";
 import api from "../services/api";
 import { loadCart } from "../utils/requisitions";
 import { getItem } from "../utils/storage";

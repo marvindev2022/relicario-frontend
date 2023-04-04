@@ -1,4 +1,7 @@
-import { useEffect, useState } from "react";
+import {
+  useEffect,
+  useState,
+} from "../../../../build/node_modules/@types/react";
 import "./style.css";
 import Header from "../../../components/admin/HeaderADM";
 import Filter from "../../../components/admin/Filter";

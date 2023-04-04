@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext } from "../../build/node_modules/@types/react";
 import useCartProvider from "../hooks/useCartProvider";
 
 export const CartContext = createContext({});
@@ -11,5 +11,3 @@ export function CartProvider({ children }) {
     </CartContext.Provider>
   );
 }
-
-

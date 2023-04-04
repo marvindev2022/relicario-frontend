@@ -1,4 +1,7 @@
-import { useEffect, useState } from "react";
+import {
+  useEffect,
+  useState,
+} from "../../../../build/node_modules/@types/react";
 import CloseIcon from "../../../assets/close-icon.svg";
 import api from "../../../services/api";
 import { notifyError, notifySucess } from "../../../utils/notifications";

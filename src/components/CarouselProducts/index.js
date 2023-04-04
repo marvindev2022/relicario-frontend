@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from "../../../build/node_modules/@types/react";
 import useProdutsList from "../../hooks/useProductsList";
 import CarouselDistacs from "../CarouselDestaques";
 import { formatToMoney } from "../../utils/formatters";
@@ -63,11 +63,12 @@ function ProductsCarousel() {
   const shoesProducts = [];
   products?.filter((product) => {
     if (product.categoria_nome === "Beleza") beautyProducts.push(product);
-    if (product.categoria_nome === "Acessórios")accessoriesProducts.push(product);
+    if (product.categoria_nome === "Acessórios")
+      accessoriesProducts.push(product);
     if (product.categoria_nome === "Vestuário") clothingProducts.push(product);
     if (product.categoria_nome === "Calçados") shoesProducts.push(product);
-    return 0
-    });
+    return 0;
+  });
 
   return (
     <>
