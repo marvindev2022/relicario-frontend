@@ -274,7 +274,7 @@ function SignUp() {
 
           <button className="btn-purple btn-big">Cadastrar</button>
 
-          <Link to="/sign-in">Já tem cadastro? Clique aqui!</Link>
+          <Link to="/relicario-frontend/sign-in">Já tem cadastro? Clique aqui!</Link>
         </form>
       </div>
     </div>

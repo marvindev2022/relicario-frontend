@@ -12,7 +12,7 @@ function SignIn() {
 
   useEffect(() => {
     const token = getItem("token");
-    if (token) navigate("/main");
+    if (token) navigate("/relicario-frontend/main");
   }, [navigate]);
 
   async function handleSubmit(e) {
@@ -27,7 +27,7 @@ function SignIn() {
       setItem("token", token);
       setItem("userId", usuarioLogado.id);
       setItem("userName", usuarioLogado.nome);
-      navigate("/main/");
+      navigate("/relicario-frontend/main/");
     } catch (error) {
       notifyError(
         error.response?.data?.mensagem || "Ocorreu um erro ao fazer login."
@@ -45,7 +45,7 @@ function SignIn() {
           </h3>
           <button
             className="btn-purple btn-big"
-            onClick={() => navigate("/sign-up")}
+            onClick={() => navigate("/relicario-frontend/sign-up")}
           >
             Cadastre-se
           </button>
