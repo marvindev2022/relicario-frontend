@@ -19,7 +19,7 @@
     "main.928f6035.js.map": "./relicario-frontend/static/js/main.928f6035.js.map"
   },
   "entrypoints": [
-    "static/css/main.a3a1f97b.css",
-    "static/js/main.928f6035.js"
+    "/build/static/css/main.a3a1f97b.css",
+    "/build/static/js/main.928f6035.js"
   ]
 }
