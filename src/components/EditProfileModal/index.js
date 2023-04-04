@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import CloseIcon from "../../assets/close-icon.svg";
-import api from "../../pages/client/SignUp/services/api";
-import { notifyError, notifySucess } from "../../utils/notifications";
-import { getItem, setItem } from "../../utils/storage";
+import CloseIcon from "./../../assets/close-icon.svg";
+import api from "./../../services/api";
+import { notifyError, notifySucess } from "./../../utils/notifications";
+import { getItem, setItem } from "./../../utils/storage";
 import "./styles.css";
 
 const defaultForm = {
