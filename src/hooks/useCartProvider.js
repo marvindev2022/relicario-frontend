@@ -16,13 +16,13 @@ export default function useCartProvider() {
     setRender(false);
   }, [render, fetchProducts]);
 
-  const addItemToCart = async (item) => {
+  const addItemToCart = async (item,state) => {
     const token = getItem("token");
     const newProduct = {
       nome: item.nome,
       imagem: item.imagem,
       produtoId: item.produto_id ?? item.id,
-      quantidade: 1,
+      quantidade: state,
       valorTotal: item.preco ?? item.valor_total,
       tipoEnvio: "correios",
       custoEnvio: 1,
