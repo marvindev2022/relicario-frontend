@@ -7,7 +7,6 @@ import CarrinhoCompras from "./../../../components/Carrinho/Cart";
 import { ProductsListProvider } from "./../../../context/ProductsContext";
 import { CartProvider } from "./../../../context/CartContext";
 
-
 function Main() {
   return (
     <ProductsListProvider>
