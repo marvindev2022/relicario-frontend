@@ -3,8 +3,8 @@ import {
   Outlet,
   Route,
   Routes,
-} from "../build/node_modules/react-router-dom/dist";
-import { ToastContainer } from "../build/node_modules/react-toastify/dist";
+} from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import MainADM from "./pages/admin/MainADM";
 import SignInADM from "./pages/admin/SignInADM";
 import Main from "./pages/client/Main";

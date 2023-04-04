@@ -1,7 +1,7 @@
 import "./styles.css";
 import Profile from "../../../assets/profile.svg";
 import Logout from "../../../assets/logout.svg";
-import { useNavigate } from "../../../../build/node_modules/react-router-dom/dist";
+import { useNavigate } from "react-router-dom/dist";
 import { clear, getItem } from "../../../utils/storage";
 
 function Header({ handleEditProfile }) {

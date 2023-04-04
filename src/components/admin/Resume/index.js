@@ -1,7 +1,7 @@
 import {
   useEffect,
   useState,
-} from "../../../../build/node_modules/@types/react";
+} from "react";
 import api from "../../../services/api";
 // import { formatToMoney } from "../../utils/formatters";
 import { notifyError } from "../../../utils/notifications";

@@ -1,4 +1,4 @@
-import { toast } from "../../build/node_modules/react-toastify/dist";
+import { toast } from "react-toastify";
 
 export const notifySucess = (message) => {
   toast.success(message, {

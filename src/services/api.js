@@ -1,4 +1,4 @@
-import axios from "../../build/node_modules/axios";
+import axios from "axios";
 
 export default axios.create({
   baseURL: "https://relicario-backend.herokuapp.com",

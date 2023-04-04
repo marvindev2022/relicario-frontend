@@ -1,4 +1,4 @@
-import { useContext } from "../../build/node_modules/@types/react";
+import { useContext } from "react";
 import { ProductsContext } from "../context/ProductsContext";
 
 export default function useProductsList() {

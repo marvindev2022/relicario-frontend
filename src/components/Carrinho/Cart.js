@@ -1,4 +1,4 @@
-import { useCartList } from "../../hooks/useCartList";
+import { useCartList } from "./../../hooks/useCartList";
 
 function CarrinhoCompras() {
   const { addItemToCart, cartItems, setCartItems } = useCartList();

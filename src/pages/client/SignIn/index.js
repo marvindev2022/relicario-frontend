@@ -1,11 +1,8 @@
-import {
-  useEffect,
-  useState,
-} from "../../../../build/node_modules/@types/react";
-import { useNavigate } from "../../../../build/node_modules/react-router-dom/dist";
-import api from "../../../services/api";
-import { notifyError } from "../../../utils/notifications";
-import { getItem, setItem } from "../../../utils/storage";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import api from "./../../../services/api";
+import { notifyError } from "./../../../utils/notifications";
+import { getItem, setItem } from "./../../../utils/storage";
 import "./styles.css";
 
 function SignIn() {

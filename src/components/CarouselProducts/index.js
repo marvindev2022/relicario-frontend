@@ -1,4 +1,4 @@
-import React, { useState } from "../../../build/node_modules/@types/react";
+import React, { useState } from "react";
 import useProdutsList from "../../hooks/useProductsList";
 import CarouselDistacs from "../CarouselDestaques";
 import { formatToMoney } from "../../utils/formatters";

@@ -1,16 +1,16 @@
 import {
   useEffect,
   useState,
-} from "../../../../build/node_modules/@types/react";
+} from "react";
 import "./style.css";
-import Header from "../../../components/admin/HeaderADM";
-import Filter from "../../../components/admin/Filter";
-import Table from "../../../components/admin/Table";
-import AddProductsModal from "../../../components/admin/AddProductsModal";
-import EditProductsModal from "../../../components/admin/EditProductsModal";
-import Resume from "../../../components/admin/Resume";
-import ProfileModal from "../../../components/admin/ProfileModalADM";
-import { loadProducts } from "../../../utils/requisitions";
+import Header from "./../../../components/admin/HeaderADM";
+import Filter from "./../../../components/admin/Filter";
+import Table from "./../../../components/admin/Table";
+import AddProductsModal from "./../../../components/admin/AddProductsModal";
+import EditProductsModal from "./../../../components/admin/EditProductsModal";
+import Resume from "./../../../components/admin/Resume";
+import ProfileModal from "./../../../components/admin/ProfileModalADM";
+import { loadProducts } from "./../../../utils/requisitions";
 
 function MainADM() {
   const [openModalProfile, setOpenModalProfile] = useState(false);

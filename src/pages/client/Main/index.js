@@ -1,11 +1,12 @@
 import "./styles.css";
-import Header from "../../../components/Header";
-import EditProfileModal from "../../../components/EditProfileModal";
-import ProductsCarousel from "../../../components/CarouselProducts";
-import Nav from "../../../components/Nav";
-import { ProductsListProvider } from "../../../context/ProductsContext";
-import { CartProvider } from "../../../context/CartContext";
-import CarrinhoCompras from "../../../components/Carrinho/Cart";
+import Header from "./../../../components/Header";
+import EditProfileModal from "./../../../components/EditProfileModal";
+import ProductsCarousel from "./../../../components/CarouselProducts";
+import Nav from "./../../../components/Nav";
+import CarrinhoCompras from "./../../../components/Carrinho/Cart";
+import { ProductsListProvider } from "./../../../context/ProductsContext";
+import { CartProvider } from "./../../../context/CartContext";
+
 
 function Main() {
   return (

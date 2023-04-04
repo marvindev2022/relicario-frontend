@@ -1,4 +1,4 @@
-import { useEffect, useState } from "../../../../build/node_modules/@types/react";
+import { useEffect, useState } from "react";
 import ArrowDown from "../../../assets/arrow-down.svg";
 import ArrowUp from "../../../assets/arrow-up.svg";
 import DeleteIcon from "../../../assets/delete-icon.svg";

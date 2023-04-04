@@ -1,7 +1,7 @@
 import {
   Link,
   useNavigate,
-} from "../../../build/node_modules/react-router-dom/dist";
+} from "react-router-dom/dist";
 import homeItem from "../../assets/home-icon.png";
 import favItem from "../../assets/fav-icon.png";
 import alert from "../../assets/alert.png";

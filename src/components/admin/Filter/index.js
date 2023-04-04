@@ -1,4 +1,4 @@
-import { useEffect, useState } from "../../../../build/node_modules/@types/react";
+import { useEffect, useState } from "react";
 import FilterIcon from "../../../assets/filter-icon.svg";
 import Chip from "../Chip";
 import "./styles.css";
