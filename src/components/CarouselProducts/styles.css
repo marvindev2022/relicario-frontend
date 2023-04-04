@@ -10,6 +10,7 @@
   display: flex;
   align-items: center;
   width: 100%;
+  min-width: 520px;
   max-width: 700px;
 }
 .product-carousel button {
