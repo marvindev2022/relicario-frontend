@@ -102,7 +102,7 @@ function SignUp() {
 
       notifySucess("Cadastro realizado.");
 
-      navigate("/");
+      navigate("/relicario-frontend/sign-in");
     } catch (error) {
       notifyError(error.response.data.mensagem);
     }
