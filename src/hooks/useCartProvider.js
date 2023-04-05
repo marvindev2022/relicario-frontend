@@ -23,7 +23,7 @@ export default function useCartProvider() {
       nome: item.nome,
       imagem: item.imagem,
       produtoId: item.produto_id ?? item.id,
-      quantidade: state,
+      quantidade: state ?? 1,
       valorTotal: item.preco ?? item.valor_total,
       tipoEnvio: "correios",
       custoEnvio: 1,
