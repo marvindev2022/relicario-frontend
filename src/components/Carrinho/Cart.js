@@ -1,14 +1,15 @@
 import { useCartList } from "./../../hooks/useCartList";
 
 function CarrinhoCompras() {
-  const { addItemToCart, cartItems, setCartItems } = useCartList();
+  const { addItemToCart, cartItems, removeItemFromCart } = useCartList();
 
   function addProduct(product) {
     addItemToCart(product);
   }
 
   function removeProduct(product) {
-    setCartItems([]);
+    
+    removeItemFromCart(product);
   }
 
   function handleClose() {

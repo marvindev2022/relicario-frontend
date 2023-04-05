@@ -6,10 +6,12 @@ import { getItem } from "./../utils/storage";
 export default function useCartProvider() {
   const [cartItems, setCartItems] = useState([]);
   const [render, setRender] = useState(false);
+
   const fetchProducts = useCallback(async () => {
     const allProducts = await loadCart();
-    if(getItem("token")){
-    setCartItems(allProducts.sort((a, b) => a.id - b.id));}
+    if (getItem("token")) {
+      setCartItems(allProducts.sort((a, b) => a.id - b.id));
+    }
   }, []);
 
   useEffect(() => {
@@ -17,7 +19,7 @@ export default function useCartProvider() {
     setRender(false);
   }, [render, fetchProducts]);
 
-  const addItemToCart = async (item,state) => {
+  const addItemToCart = async (item, state) => {
     const token = getItem("token");
     const newProduct = {
       nome: item.nome,
@@ -39,17 +41,28 @@ export default function useCartProvider() {
     setRender(true);
   };
 
-  const removeItemFromCart = (item) => {
-    const newCartItems = cartItems?.filter(
-      (cartItem) => cartItem.produto_id !== item.id
-    );
-    setCartItems(newCartItems);
+  const removeItemFromCart = async (item) => {
+    const token = getItem("token");
+    const newProduct = {
+      nome: item.nome,
+      imagem: item.imagem,
+      produtoId: item.produto_id ?? item.id,
+      quantidade: -1,
+      valorTotal: item.preco ?? item.valor_total,
+      tipoEnvio: "correios",
+      custoEnvio: 1,
+    };
+    await api.post("/carrinho", newProduct, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    fetchProducts();
+    setRender(true);
   };
 
-  const clearCart = () => {
-    setCartItems([]);
-  };
-
+  const clearCart = async (item, state) => {};
   return {
     cartItems,
     setCartItems,
