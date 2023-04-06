@@ -96,7 +96,7 @@ function ProductsCarousel() {
         </div>
         <span className="container-p-top">
           <h3 className="description-section" style={{ width: "450px" }}>
-            Vestuário
+             Moda
           </h3>
           <p className="view-all">Ver tudo</p>
         </span>
@@ -105,7 +105,7 @@ function ProductsCarousel() {
         </div>
         <span className="container-p-top">
           <h3 className="description-section" style={{ width: "450px" }}>
-            Calçados
+            Kits
           </h3>
           <p className="view-all">Ver tudo</p>
         </span>
