@@ -43,6 +43,16 @@ export default function useCartProvider() {
 
   const removeItemFromCart = async (item) => {
     const token = getItem("token");
+    if (item.quantidade <= 1) {
+     await api.delete("/carrinho", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      
+      
+    }
+    if (item.quantidade === 0) return;
     const newProduct = {
       nome: item.nome,
       imagem: item.imagem,

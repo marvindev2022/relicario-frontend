@@ -12,7 +12,7 @@
   background: #ffffff;
   border-radius: 25px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  padding: 20px;
+  padding: 20px 20px;
 }
 .container-cart h1 {
   font-family: "Roboto";
@@ -26,23 +26,21 @@
   color: #283148;
 }
 .img-cart {
-  width: 70px;
-  height: 70px;
-  object-fit: cover;
+  min-width: 80px;
+  max-width: 80px;
+  object-fit: 100%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-
 .product-name {
   font-family: "Roboto";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 18px;
   line-height: 19px;
+  margin-bottom: 5px;
 
-  margin-left: 10px;
   color: #283148;
 }
-
 .close-cart-x {
   all: unset;
   position: absolute;
@@ -59,9 +57,9 @@
 }
 .div-line {
   background-color: rgb(5, 5, 5);
-  width: 380px;
+  width: 410px;
   height: 1px;
-  margin: 5px 0 10px 25px;
+  margin: 5px 0 10px 10px;
 }
 ul {
   width: 450px;
@@ -73,7 +71,7 @@ ul {
 }
 
 li {
-  padding: 5px 20px;
+  padding: 5px 10px;
   list-style: none;
 }
 .container-details {
@@ -81,16 +79,19 @@ li {
   flex-direction: column;
   width: 100%;
 
-  padding: 5px;
+  padding: 0 10px;
 }
 .section-details {
   display: flex;
   justify-content: baseline;
-  height: 50px;
-  padding: 10px 0 0 5px;
+  height: 40px;
 }
 .container-quantity {
   display: flex;
+  height: 34px;
+  background: #ffffff;
+  border: 2px solid rgba(40, 49, 72, 0.817);
+  border-radius: 6px 0px 0px 6px;
 }
 .container-cart-price {
   display: flex;
@@ -114,7 +115,6 @@ li {
   background: #ffffff;
   border-radius: 6px 0px 0px 6px;
 }
-
 .new-price {
   width: 90px;
   font-family: "Roboto";
@@ -125,7 +125,6 @@ li {
   margin-top: 5px;
   color: #ff5959;
 }
-
 .old-price {
   font-family: "Roboto";
   font-style: normal;
@@ -133,11 +132,10 @@ li {
   font-size: 12px;
   line-height: 14px;
   text-decoration-line: line-through;
+  margin-top: -15px;
   color: #141414;
-  margin: -5px 0 0 10px;
   opacity: 0.6;
 }
-
 .container-all-values {
   display: flex;
   justify-content: flex-end;
@@ -157,8 +155,7 @@ li {
   color: #ff5959;
   margin-top: 5px;
 }
-
-.all-products-value {
+.aumont {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
@@ -167,7 +164,6 @@ li {
   margin-top: 5px;
   color: #ff5959;
 }
-
 .btn-confirm-transaction {
   width: 280px;
   height: 46px;

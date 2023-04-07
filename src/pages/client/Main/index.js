@@ -8,12 +8,7 @@ import { ProductsListProvider } from "./../../../context/ProductsContext";
 import { CartProvider } from "./../../../context/CartContext";
 
 function Main() {
-  const largura = window.innerWidth;
-  const altura = window.innerHeight;
-console.log({
-  with:largura,
-  height:altura
-})
+ 
   return (
     <ProductsListProvider>
       <div className="container-main">
