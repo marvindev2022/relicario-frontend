@@ -1,4 +1,3 @@
 node_modules
-buildbuild
 .prettierrc
 src/components/Menu/menu.js
