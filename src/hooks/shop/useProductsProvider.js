@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { loadProducts } from "../utils/requisitions";
+import { useEffect, useState } from 'react';
+import { loadProducts } from '../../utils/requisitions';
 
 export default function useProductsProvider() {
   const [products, setProducts] = useState([]);

@@ -1,36 +1,36 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import api from "./../../../services/api";
-import { notifyError } from "./../../../utils/notifications";
-import { getItem, setItem } from "./../../../utils/storage";
-import "./styles.css";
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import api from './../../../services/api';
+import { notifyError } from './../../../utils/notifications';
+import { getItem, setItem } from './../../../utils/storage';
+import './styles.css';
 
 function SignIn() {
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   useEffect(() => {
-    const token = getItem("token");
-    if (token) navigate("/main");
+    const token = getItem('token');
+    if (token) navigate('/main');
   }, [navigate]);
 
   async function handleSubmit(e) {
     e.preventDefault();
     if (!email || !password)
-      return notifyError("Todos os campos são obrigatórios.");
+      return notifyError('Todos os campos são obrigatórios.');
 
     try {
-      const response = await api.post("/login", { email, senha: password });
-      const { usuarioLogado, token } = response.data;
-
-      setItem("token", token);
-      setItem("userId", usuarioLogado.id);
-      setItem("userName", usuarioLogado.nome);
-      navigate("/main/");
+      const response = await api.post('/login', { email, password });
+      const { user, token } = response.data;
+ console.log(response)
+      setItem('token', token);
+      setItem('userId', user.id);
+      setItem('userName', user.nome);
+      navigate('/main/');
     } catch (error) {
       notifyError(
-        error.response?.data?.mensagem || "Ocorreu um erro ao fazer login."
+        error.response?.data?.mensagem || 'Ocorreu um erro ao fazer login.',
       );
     }
   }
@@ -44,8 +44,8 @@ function SignIn() {
             ninguém lhe dizer o contrário."
           </h3>
           <button
-            className="btn-purple btn-big"
-            onClick={() => navigate("/sign-up")}
+            className="btn-big btn-purple"
+            onClick={() => navigate('/sign-up')}
           >
             Cadastre-se
           </button>
@@ -71,7 +71,7 @@ function SignIn() {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-            <button className="btn-purple btn-big">Entrar</button>
+            <button className="btn-big btn-purple">Entrar</button>
           </form>
         </div>
       </div>

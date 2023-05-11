@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import useProdutsList from "../../hooks/useProductsList";
+import { formatToMoney } from "../../functions/formatters";
+import { useProductsList } from "../../hooks/shop/useProductsList";
 import CarouselDistacs from "../CarouselDestaques";
-import { formatToMoney } from "../../utils/formatters";
+import ProductDialog from "../DialogProduct/dialog";
 import "./styles.css";
-import ProductDialog from "../Dialog/dialog";
 
 function ProductCard({ product }) {
-  const { stateItensCar, setStateItensCar } = useProdutsList();
+  const { stateItensCar, setStateItensCar } = useProductsList();
 
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const handleOpenDialog = () => {
@@ -47,7 +47,7 @@ function ProductCarousel({ products }) {
   return (
     <div className="product-carousel">
       <div className="product-carousel-cards">
-        {products.map((product) => (
+        {products.map(product => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
@@ -56,12 +56,12 @@ function ProductCarousel({ products }) {
 }
 
 function ProductsCarousel() {
-  const { products } = useProdutsList();
+  const { products } = useProductsList();
   const beautyProducts = [];
   const accessoriesProducts = [];
   const clothingProducts = [];
   const shoesProducts = [];
-  products?.filter((product) => {
+  products?.filter(product => {
     if (product.categoria_nome === "Beleza") beautyProducts.push(product);
     if (product.categoria_nome === "Acessórios")
       accessoriesProducts.push(product);
@@ -78,9 +78,16 @@ function ProductsCarousel() {
       <section className="container-section-cards">
         <span className="container-p-top">
           <h3 className="description-section" style={{ width: "450px" }}>
+            Moda
+          </h3>
+        </span>
+        <div className="container-card">
+          <ProductCarousel products={clothingProducts} />
+        </div>
+        <span className="container-p-top">
+          <h3 className="description-section" style={{ width: "450px" }}>
             Beleza
           </h3>
-          <p className="view-all">Ver tudo</p>
         </span>
         <div className="container-card">
           <ProductCarousel products={beautyProducts} />
@@ -89,25 +96,14 @@ function ProductsCarousel() {
           <h3 className="description-section" style={{ width: "450px" }}>
             Acessórios
           </h3>
-          <p className="view-all">Ver tudo</p>
         </span>
         <div className="container-card">
           <ProductCarousel products={accessoriesProducts} />
         </div>
         <span className="container-p-top">
           <h3 className="description-section" style={{ width: "450px" }}>
-            Vestuário
+            Kits
           </h3>
-          <p className="view-all">Ver tudo</p>
-        </span>
-        <div className="container-card">
-          <ProductCarousel products={clothingProducts} />
-        </div>
-        <span className="container-p-top">
-          <h3 className="description-section" style={{ width: "450px" }}>
-            Calçados
-          </h3>
-          <p className="view-all">Ver tudo</p>
         </span>
         <div className="container-card">
           <ProductCarousel products={shoesProducts} />

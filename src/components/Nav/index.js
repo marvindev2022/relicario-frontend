@@ -1,7 +1,4 @@
-import {
-  Link,
-  useNavigate,
-} from "react-router-dom/dist";
+import { Link, useNavigate } from "react-router-dom/dist";
 import homeItem from "../../assets/home-icon.png";
 import favItem from "../../assets/fav-icon.png";
 import alert from "../../assets/alert.png";
@@ -53,7 +50,11 @@ export default function Nav() {
       <span>
         <img
           onClick={() => {
-            getItem("token") ? console.log("aqui") : navigate("/sign-in");
+            if (!getItem("token")) {
+              navigate("/sign-in");
+            } else {
+              document.querySelector(".main-menu").classList.remove("hidden");
+            }
           }}
           src={profileItem}
           alt=""

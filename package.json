@@ -19,10 +19,11 @@
     "slick-carousel": "^1.8.1",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://marvindev2022.github.io/relicario-frontend/",
+  "homepage": "https://645c60bc550a2445d0488ce3--relicario.netlify.app/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy": "npm run build && netlify deploy --prod",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -55,5 +56,9 @@
   "bugs": {
     "url": "https://github.com/marvindev2022/relicario-frontend/issues"
   },
-  "description": ""
+  "description": "",
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=7.0.0"
+  }
 }

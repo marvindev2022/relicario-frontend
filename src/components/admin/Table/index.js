@@ -4,7 +4,7 @@ import ArrowUp from "../../../assets/arrow-up.svg";
 import DeleteIcon from "../../../assets/delete-icon.svg";
 import EditIcon from "../../../assets/edit-icon.svg";
 import api from "../../../services/api";
-import { formatToMoney } from "../../../utils/formatters";
+import { formatToMoney } from "../../../functions/formatters";
 import { notifyError, notifySucess } from "../../../utils/notifications";
 import { loadProducts } from "../../../utils/requisitions";
 import { getItem } from "../../../utils/storage";
@@ -15,7 +15,7 @@ function Table({
   products,
   setProducts,
   setOpenModalEdit,
-  setCurrentItemToEdit,
+  setCurrentItemToEdit
 }) {
   const token = getItem("token") ? getItem("token") : getItem("tokenADM");
 
@@ -33,8 +33,8 @@ function Table({
     try {
       const response = await api.delete(`/produtos/${currentItem.id}`, {
         headers: {
-          Authorization: `Bearer ${token}`,
-        },
+          Authorization: `Bearer ${token}`
+        }
       });
 
       if (response.status > 204) {
@@ -90,7 +90,7 @@ function Table({
       </div>
 
       <div className="table-body">
-        {orderedProducts.map((transact) => {
+        {orderedProducts.map(transact => {
           return (
             <div className="table-row" key={transact.id}>
               <strong className="table-column-small content-date">

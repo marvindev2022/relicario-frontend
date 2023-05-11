@@ -1,0 +1,182 @@
+.container-cart {
+
+  min-width: 100%;
+  min-height: 100%;
+  background-color: rgba(0, 0, 0, 0.347);
+  
+}
+.cart {
+  position: absolute;
+  top:20%;
+  left: 15px;
+  width: 100%;
+  max-width: 520px;
+  min-height: 600px;
+
+  background: #ffffff;
+  border-radius: 25px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding: 20px 20px;
+}
+.close-cart-x {
+  all: unset;
+  position: absolute;
+  right: 10px;
+  width: 50px;
+  font-size: 20px;
+  font-weight: 700;
+  background: none;
+}
+.container-cart h1 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  margin: 30px 30px 30px 10px;
+
+  color: #283148;
+}
+.img-cart {
+  min-width: 80px;
+  max-width: 80px;
+  object-fit: 100%;
+}
+.product-name {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 19px;
+
+  color: #283148;
+}
+
+.product-item {
+  display: flex;
+  background-color: #8e8e9f0a;
+  height: 100px;
+}
+.div-line {
+  background-color: rgba(5, 5, 5, 0.15);
+  width: 450px;
+  height: 1px;
+  margin: 5px 0 10px 10px;
+}
+ul {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  height: 420px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-left: -15px;
+}
+
+li {
+  padding: 5px 10px;
+  list-style: none;
+}
+.container-details {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-left: 10px;
+}
+.section-details {
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+.container-quantity {
+  display: flex;
+  height: 34px;
+  background: rgba(40, 49, 72, 0.2);
+  border: 2px solid rgba(40, 49, 72, 0);
+  border-radius: 6px 6px 6px 6px;
+  margin: 0 10px;
+}
+.container-cart-price {
+  display: flex;
+  width: 100px;
+  max-height: 50px;
+  margin-right: 10px;
+}
+.btn-controller-quantity {
+  all: unset;
+  width: 30px;
+  height: 30px;
+
+  font-weight: 600;
+  text-align: center;
+  background: rgba(40, 49, 72, 0);
+}
+.show-quantity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 30px;
+  text-align: center;
+  background: #ffffff;
+  border-radius: 6px 0px 0px 6px;
+}
+.new-price {
+  width: 100px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ff5959;
+}
+.old-price {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+  text-decoration-line: line-through;
+  color: #141414;
+  opacity: 0.6;
+  margin-top: -10px;
+}
+.container-all-values {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  height: 60px;
+  padding-top: 10px;
+}
+.all-values {
+  width: 90px;
+  max-height: 20px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ff5959;
+  margin-left: 10px;
+  
+}
+.container-aumont {
+
+}
+.aumont {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 19px;
+  color: #ff5959;
+}
+.btn-confirm-transaction {
+  width: 280px;
+  height: 46px;
+  margin-left: 70px;
+  background: #ff5959;
+  border-radius: 8px;
+  color: #ffffff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
