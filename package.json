@@ -23,6 +23,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy": "npm run build && netlify deploy --prod",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -58,5 +59,6 @@
   "description": "",
   "engines": {
     "node": ">=16.0.0",
-    "npm": ">=7.0.0"}
+    "npm": ">=7.0.0"
   }
+}
