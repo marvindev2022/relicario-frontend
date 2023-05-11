@@ -1,13 +1,13 @@
-import api from "./../services/api";
-import { getItem } from "./storage";
+import api from './../services/api';
+import { getItem } from './storage';
 
 export async function loadCategories() {
-  let token = "";
+  let token = '';
 
-  token = getItem("tokenADM");
+  token = getItem('tokenADM');
 
   try {
-    const { data } = await api.get("/categorias", {
+    const { data } = await api.get('/categorias', {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -22,10 +22,10 @@ export async function loadCategories() {
 }
 
 export async function loadSubcategories() {
-  const token = getItem("tokenADM") ?? "";
+  const token = getItem('tokenADM') ?? '';
 
   try {
-    const { data } = await api.get("/categorias", {
+    const { data } = await api.get('/categorias', {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -41,7 +41,7 @@ export async function loadSubcategories() {
 
 export async function loadProducts() {
   try {
-    const { data } = await api.get("/produtos");
+    const { data } = await api.get('/produtos');
 
     return data;
   } catch (error) {
@@ -51,7 +51,7 @@ export async function loadProducts() {
 
 export async function loadDistacs() {
   try {
-    const { data } = await api.get("/destaques");
+    const { data } = await api.get('/destaques');
     return data;
   } catch (error) {
     console.error(error);
@@ -59,8 +59,8 @@ export async function loadDistacs() {
 }
 export async function loadCart() {
   try {
-    const token = getItem("token");
-    const { data } = await api.get("/carrinho", {
+    const token = getItem('token');
+    const { data } = await api.get('/carrinho', {
       headers: {
         Authorization: `Bearer ${token}`,
       },

@@ -1,5 +1,5 @@
-import { createContext } from "react";
-import useCartProvider from "../hooks/useCartProvider";
+import { createContext } from 'react';
+import useCartProvider from '../hooks/cart/useCartProvider';
 
 export const CartContext = createContext({});
 

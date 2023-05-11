@@ -45,6 +45,8 @@ header {
   padding-left: 50px;
   width: 284px;
   height: 40px;
+  cursor: pointer;
+  z-index: 2;
 }
 
 .lupa {
@@ -52,7 +54,8 @@ header {
   height: 18;
   position: absolute;
   margin-left: 10px;
-  z-index: 5;
+  z-index: 3;
+
 }
 
 .car-icon {

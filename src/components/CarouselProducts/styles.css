@@ -23,25 +23,6 @@
   height: 250px;
   padding-left: 10px;
 }
-
-.hidden {
-  display: none;
-}
-.view-all {
-  width: 100px;
-  cursor: pointer;
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 14px;
-  text-align: center;
-
-  color: #ff5959;
-}
-.view-all:hover {
-  text-transform: uppercase;
-}
 .description-section {
   max-width: 100px;
 
@@ -79,7 +60,7 @@
   
 }
 .container-card::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.559);
+  background-color: rgba(0, 0, 0, 0);
   border-radius: 10px;
 }
 

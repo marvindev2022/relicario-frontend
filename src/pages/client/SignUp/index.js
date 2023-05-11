@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { notifyError, notifySucess } from "./../../../utils/notifications";
-import api from "./../../../services/api";
-import "./styles.css";
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { notifyError, notifySucess } from './../../../utils/notifications';
+import api from './../../../services/api';
+import './styles.css';
 
 const defaultForm = {
   name: null,
@@ -25,34 +25,34 @@ function SignUp() {
   const navigate = useNavigate();
 
   const [form, setForm] = useState({ ...defaultForm });
-  const estados = [
-    { sigla: "AC", nome: "Acre" },
-    { sigla: "AL", nome: "Alagoas" },
-    { sigla: "AP", nome: "Amapá" },
-    { sigla: "AM", nome: "Amazonas" },
-    { sigla: "BA", nome: "Bahia" },
-    { sigla: "CE", nome: "Ceará" },
-    { sigla: "DF", nome: "Distrito Federal" },
-    { sigla: "ES", nome: "Espírito Santo" },
-    { sigla: "GO", nome: "Goiás" },
-    { sigla: "MA", nome: "Maranhão" },
-    { sigla: "MT", nome: "Mato Grosso" },
-    { sigla: "MS", nome: "Mato Grosso do Sul" },
-    { sigla: "MG", nome: "Minas Gerais" },
-    { sigla: "PA", nome: "Pará" },
-    { sigla: "PB", nome: "Paraíba" },
-    { sigla: "PR", nome: "Paraná" },
-    { sigla: "PE", nome: "Pernambuco" },
-    { sigla: "PI", nome: "Piauí" },
-    { sigla: "RJ", nome: "Rio de Janeiro" },
-    { sigla: "RN", nome: "Rio Grande do Norte" },
-    { sigla: "RS", nome: "Rio Grande do Sul" },
-    { sigla: "RO", nome: "Rondônia" },
-    { sigla: "RR", nome: "Roraima" },
-    { sigla: "SC", nome: "Santa Catarina" },
-    { sigla: "SP", nome: "São Paulo" },
-    { sigla: "SE", nome: "Sergipe" },
-    { sigla: "TO", nome: "Tocantins" },
+  const states = [
+    { sigla: 'AC', nome: 'Acre' },
+    { sigla: 'AL', nome: 'Alagoas' },
+    { sigla: 'AP', nome: 'Amapá' },
+    { sigla: 'AM', nome: 'Amazonas' },
+    { sigla: 'BA', nome: 'Bahia' },
+    { sigla: 'CE', nome: 'Ceará' },
+    { sigla: 'DF', nome: 'Distrito Federal' },
+    { sigla: 'ES', nome: 'Espírito Santo' },
+    { sigla: 'GO', nome: 'Goiás' },
+    { sigla: 'MA', nome: 'Maranhão' },
+    { sigla: 'MT', nome: 'Mato Grosso' },
+    { sigla: 'MS', nome: 'Mato Grosso do Sul' },
+    { sigla: 'MG', nome: 'Minas Gerais' },
+    { sigla: 'PA', nome: 'Pará' },
+    { sigla: 'PB', nome: 'Paraíba' },
+    { sigla: 'PR', nome: 'Paraná' },
+    { sigla: 'PE', nome: 'Pernambuco' },
+    { sigla: 'PI', nome: 'Piauí' },
+    { sigla: 'RJ', nome: 'Rio de Janeiro' },
+    { sigla: 'RN', nome: 'Rio Grande do Norte' },
+    { sigla: 'RS', nome: 'Rio Grande do Sul' },
+    { sigla: 'RO', nome: 'Rondônia' },
+    { sigla: 'RR', nome: 'Roraima' },
+    { sigla: 'SC', nome: 'Santa Catarina' },
+    { sigla: 'SP', nome: 'São Paulo' },
+    { sigla: 'SE', nome: 'Sergipe' },
+    { sigla: 'TO', nome: 'Tocantins' },
   ];
 
   async function handleSubmit(e) {
@@ -74,37 +74,37 @@ function SignUp() {
         !form.city ||
         !form.bairro
       ) {
-        return notifyError("Todos os campos são obrigatórios.");
+        return notifyError('Todos os campos são obrigatórios.');
       }
 
       if (form.password !== form.confirmPassword) {
-        return notifyError("As senhas precisam ser iguais.");
+        return notifyError('As senhas precisam ser iguais.');
       }
 
-      const response = await api.post("/usuario", {
+      const { data, status } = await api.post('/usuario', {
         nome: form.name,
         email: form.email,
         senha: form.password,
-        cpf: form.cpf.replace(/\D/g, ""),
+        cpf: form.cpf.replace(/\D/g, ''),
         logradouro: form.street,
         numero: form.streetNumber,
         complemento: form.complement,
-        cep: form.cep.replace(/\D/g, ""),
+        cep: form.cep.replace(/\D/g, ''),
         data_nascimento: form.date,
-        telefone: form.phone.replace(/\D/g, ""),
+        telefone: form.phone.replace(/\D/g, ''),
         estado: form.state,
         cidade: form.city,
         bairro: form.bairro,
       });
-      if (response.status > 204) {
-        return notifyError(response.data);
+      if (status > 204) {
+        return notifyError(data);
       }
 
-      notifySucess("Cadastro realizado.");
+      notifySucess('Cadastro realizado.');
 
-      navigate("/relicario-frontend/sign-in");
+      navigate('/sign-in');
     } catch (error) {
-      notifyError(error.response.data.mensagem);
+      notifyError(error.data.mensagem);
     }
   }
 
@@ -145,7 +145,7 @@ function SignUp() {
               type="text"
               name="cep"
               placeholder="xx.xxx-xxx"
-              value={form.cep?.replace(/^(\d{2})(\d{3})(\d{3})$/, "$1.$2-$3")}
+              value={form.cep?.replace(/^(\d{2})(\d{3})(\d{3})$/, '$1.$2-$3')}
               onChange={handleChangeForm}
             />
           </div>
@@ -158,7 +158,7 @@ function SignUp() {
               required
             >
               <option value="">Selecione</option>
-              {estados.map((estado) => (
+              {states.map((estado) => (
                 <option key={estado.sigla} value={estado.sigla}>
                   {estado.nome}
                 </option>
@@ -221,10 +221,10 @@ function SignUp() {
             <input
               type="text"
               name="cpf"
-              placeholder="xxx.xxx.xxx-xx"
+              placeholder="111.222.333-45"
               value={form.cpf?.replace(
                 /^(\d{3})(\d{3})(\d{3})(\d{2})$/,
-                "$1.$2.$3-$4"
+                '$1.$2.$3-$4',
               )}
               onChange={handleChangeForm}
             />
@@ -246,7 +246,7 @@ function SignUp() {
               placeholder="(xx) x xxxx-xxxx"
               value={form.phone?.replace(
                 /^(\d{2})(\d{1})(\d{4})(\d{4})$/,
-                "($1) $2 $3-$4"
+                '($1) $2 $3-$4',
               )}
               onChange={handleChangeForm}
             />
@@ -274,7 +274,9 @@ function SignUp() {
 
           <button className="btn-purple btn-big">Cadastrar</button>
 
-          <Link to="/relicario-frontend/sign-in">Já tem cadastro? Clique aqui!</Link>
+          <Link to="/sign-in">
+            Já tem cadastro? Clique aqui!
+          </Link>
         </form>
       </div>
     </div>

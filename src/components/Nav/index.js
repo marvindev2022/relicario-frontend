@@ -1,7 +1,4 @@
-import {
-  Link,
-  useNavigate,
-} from "react-router-dom/dist";
+import { Link, useNavigate } from "react-router-dom/dist";
 import homeItem from "../../assets/home-icon.png";
 import favItem from "../../assets/fav-icon.png";
 import alert from "../../assets/alert.png";
@@ -15,10 +12,10 @@ export default function Nav() {
   return (
     <menu className="menu-fixed">
       <span>
-        <Link to="/relicario-frontend/">
+        <Link to="/">
           <img
             onClick={() => {
-              navigate("/relicario-frontend/");
+              navigate("/");
             }}
             src={homeItem}
             alt=""
@@ -27,10 +24,10 @@ export default function Nav() {
         Home
       </span>
       <span>
-        <Link to="/relicario-frontend/">
+        <Link to="/">
           <img
             onClick={() => {
-              navigate("/relicario-frontend/favorict");
+              navigate("/favorict");
             }}
             src={favItem}
             alt=""
@@ -39,10 +36,10 @@ export default function Nav() {
         Favoritos
       </span>
       <span>
-        <Link to="/relicario-frontend/">
+        <Link to="/">
           <img
             onClick={() => {
-              navigate("/relicario-frontend/carrinho");
+              navigate("/carrinho");
             }}
             src={alert}
             alt=""
@@ -53,7 +50,11 @@ export default function Nav() {
       <span>
         <img
           onClick={() => {
-            getItem("token") ? console.log("aqui") : navigate("/relicario-frontend/sign-in");
+            if (!getItem("token")) {
+              navigate("/sign-in");
+            } else {
+              document.querySelector(".main-menu").classList.remove("hidden");
+            }
           }}
           src={profileItem}
           alt=""

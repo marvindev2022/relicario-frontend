@@ -1,5 +1,5 @@
-import { createContext } from "react";
-import useProductsProvider from "../hooks/useProductsProvider";
+import { createContext } from 'react';
+import useProductsProvider from '../hooks/shop/useProductsProvider';
 
 export const ProductsContext = createContext({});
 

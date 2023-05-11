@@ -1,9 +1,9 @@
-import axios from "axios";
+import axios from 'axios';
 
 export default axios.create({
-  baseURL: "https://relicario-backend.herokuapp.com",
+  baseURL: 'http://localhost:4000',
   timeout: 10000,
   headers: {
-    "Content-Type": "application/json",
+    'Content-Type': 'application/json',
   },
 });
