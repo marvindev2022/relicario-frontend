@@ -19,7 +19,7 @@
     "slick-carousel": "^1.8.1",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://645c60bc550a2445d0488ce3--relicario.netlify.app/",
+  "homepage": "https://645c638f0ade490008d23f66--relicario.netlify.app/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
